@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body>
+
+  
+  <div class="container" data-theme="one"> <!-- Allow Switching Themes -->
+    <main>
+  <script src="/JS/theme.js"></script>
+  <section class="title">
+    <h1>calc</h1>
+    <p>THEME</p>
+      <div class="right">
+      <div class="toggle">
+      <input type="radio" id="theme1" value="0" name="theme" checked>
+      <label for="theme1">1</label>
+      <input type="radio" id="theme2" value="1" name="theme">
+      <label for="theme2">2</label>
+      <input type="radio" id="theme3" value="2" name="theme">
+      <label for="theme3">3</label>
+      </div>
+    </div>
+  </section>
+
+  <section class="result">
+    <!-- <input type="text" id="result" placeholder="0" readonly> -->
+    <span id="previous-value">0</span>
+    <span id="current-value">0</span>
+  </section>
+
+  <section class="buttons-container">
+    <div class="keycaps">
+      <button class="number" value="7" data-num>7</button>
+      <button class="number" value="8" data-num>8</button>
+      <button class="number" value="9" data-num>9</button>
+      <button class="del" value="DEL" data-del>DEL</button>
+      <button class="number" value="4" data-num>4</button>
+      <button class="number" value="5" data-num>5</button>
+      <button class="number" value="6" data-num>6</button>
+      <button class="plus" id="+" value="+" data-operator>+</button>
+      <button class="number" value="1" data-num>1</button>
+      <button class="number" value="2" data-num>2</button>
+      <button class="number" value="3" data-num>3</button>
+      <button class="sub operators" id="-" value="-" data-operator>-</button>
+      <button class="dot number" value="." data-num>.</button>
+      <button class="number" value="0" data-num>0</button>
+      <button class="division operators" id="/" value="&divide" data-operator>&divide</button>
+      <button class="multi operators" id="x" value="&times" data-operator>&times</button>
+      <button class="btn-reset special" value="RESET" data-reset>RESET</button>
+      <button class="equal" value="=" data-equal>=</button>
+    </div>
+  </section>
+  </main>
+</div>
+<script src="/JS/operation.js"></script>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  
+</body>
+</html>
