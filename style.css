@@ -79,15 +79,15 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: max-content;
+    background-color: var(--mainbackground); /*can be change between themes*/
 }
 
 main {
     height: 100vh;
     padding-top: 60px;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+
     padding-left: 50px;
     padding-right: 50px;
     flex-direction: column;
@@ -269,4 +269,38 @@ background-color:var(--key-hover);
 }
 
 
+@media (max-width:900px) {
+.title {
+width: 100%;
+justify-content: center;
+margin-left: 6%;
+}
 
+h1 {
+    font-size:30px;
+}
+
+p {
+    font-size: 15px;
+    margin-right: -8%;
+}
+
+.right {
+  margin-left: 20%;
+}
+
+.result {
+width: 100%;
+}
+
+.buttons-container {
+    width: 100%;
+    margin: 10px;
+}
+
+.keycaps {
+    grid-template-rows:repeat(5,60px);
+    grid-template-columns: repeat(4,60px);
+}
+
+}
