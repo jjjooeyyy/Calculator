@@ -24,47 +24,69 @@
  //variable to hold the operator that have previously clicked
  let previousOperator = "";
  let haveDot = false;
- let operation;
+let operation;
  
- /* //operators functions
- const add = (num1,num2)=> num1+num2;
- const sub = (num1,num2)=> num1-num2;
- const multi = (num1,num2)=> num1*num2;
- const div = (num1,num2)=> num1/num2;
- 
- //a function for return result from the above operators functions
- const caluclation = (operator,num1,num2) => {
-   switch (operator) {
-     case "+": //from id in the keycaps input
-       return add(num1,num2);
-     case "-":
-       return sub(num1,num2);
-     case "x":
-       return multi(num1,num2);
-     case "/":
-       return div(num1,num2);
-     default:
-       return 0;
-   }
- } */
 
- //Make number clickable and show on display
- /* number.forEach(target => {
-    target.addEventListener("click", () =>{
-        if (currentValue.innerHTML[0] == "0" && currentValue.innerHTML[1] !== "." ) {
-            currentValue.innerHTML = target.innerHTML
-        }else{
-            currentValue.innerHTML += target.innerHTML
-        }
-    })
-}); */
+ // Math Operations
+function selectOperator(operator) {
+  if(currentValue === undefined) return;
+  if(previousValue!==""){
+    calculation();
+  }
+  operation = operator;
+  typedValue = currentValue.innerText + operation;
+  previousValue.innerText = typedValue;
+  currentValue.innerText = "";
+}
+  
+ // Calculation Operations
+ function calculation() {
+  let result = "";
+  let previous = parseFloat(previousValue.innerText);
+  let current = parseFloat(currentValue.innerText);
+  if(isNaN(previous) || isNaN(current)) {typedValue=""};
+
+  switch(operation) {
+    case "+":
+      result = previous + current;
+      break;
+    case "-":
+      result = previous - current;
+      break;
+    case "x":
+      result = previous * current;
+      break;
+    case "/":
+      result = previous/current;
+      break;
+    default:
+      return;
+  }
+  currentValue.innerText = (Number(result)).toLocaleString();
+  operation = undefined;
+  previousValue.innerText = "";
+  }
+ 
+
+// Associated clicked operator buttons 
+ operators.forEach(btn => {
+  btn.addEventListener("click",() => {
+    selectOperator(btn.innerText);
+    typedValue = "";
+    currentValue.innerText = "";
+  })
+ })
 
  //Make number clickable and show on display
 number.forEach((num) => {
     num.addEventListener("click", (e) => {
       if (e.target.innerText === "." && !haveDot) {
         haveDot = true;
-      } else if (e.target.innerText === "." && haveDot) {
+      } /*else if (e.target.innerText === "." && haveDot) {
+        return;
+      } */ else if (currentValue.innerText.length === 20) {
+        return;
+      } else if (currentValue.innerText === undefined) {
         return;
       }
       typedValue += e.target.innerText;
@@ -78,4 +100,24 @@ number.forEach((num) => {
      previousValue.innerText = 0;
      currentValue.innerText = 0; 
      typedValue = ""; // Remove the item that typed before
+     haveDot = false;
   });
+
+  // Delete function
+  delBtn.addEventListener("click",()=> {
+  typedValue = currentValue.innerText.toString().slice(0,-1);
+  currentValue.innerText = typedValue;
+  if(typedValue.length===0){
+    currentValue.innerText = 0;
+  }
+  });
+
+// Result function
+result.addEventListener("click",() => {
+  calculation();
+  previousValue.innerText = "";
+  delBtn.disabled = true; // User can't press del to del the number for the result
+})
+
+
+

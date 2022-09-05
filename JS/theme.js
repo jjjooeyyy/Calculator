@@ -1,4 +1,4 @@
-"use strict";
+
 /******* Change Theme *******/
 document.body.addEventListener("change", function(e) {
   let target = e.target;
@@ -26,12 +26,9 @@ document.body.addEventListener("change", function(e) {
 document.body.addEventListener("click",(e) => {
   let target = e.target;
   if(e.target.id) { /** theme1,theme2,theme3 **/
-    const key = document.querySelector(`#${e.target.id}`).textContent;
+    const key = (document.getElementById(`${e.target.id}`)).textContent;
   } /** change its text content, textcontent return HTML and CSS text */
-  //console.log(e.target.id);
+ //console.log(e.target.id);
 });
-
-
-
  
  
