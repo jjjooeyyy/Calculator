@@ -277,6 +277,7 @@ background-color:var(--key-hover);
 width: 100%;
 justify-content: center;
 margin-left: 6%;
+
 }
 
 h1 {
@@ -306,4 +307,7 @@ width: 100%;
     grid-template-columns: repeat(4,60px);
 }
 
+.attribution {
+    font-size: 10px;
+}
 }
