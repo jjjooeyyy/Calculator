@@ -73,16 +73,16 @@
 }
 
 .attribution{
-    margin-top: 5rem;
+    margin-top: 1rem;
     text-align: center;
     color: white;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 15px;
 }
 
 body {
     width: 100vw;
-    height: 100vh;
     background-color: var(--mainbackground); /*can be change between themes*/
 }
 
@@ -107,6 +107,7 @@ main {
     font-size: 28px;
     margin-bottom: 20px;
     color: var(--title-result-color);
+    margin-top:15%;
 }
 
  h1 {
