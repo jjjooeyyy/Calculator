@@ -55,9 +55,10 @@ function selectOperator(operator) {
       break;
     case "x":
       result = previous * current;
+      console.log(result);
       break;
-    case "/":
-      result = previous/current;
+    case "÷":
+      result = previous / current;
       break;
     default:
       return;

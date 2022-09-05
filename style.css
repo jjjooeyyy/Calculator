@@ -273,7 +273,6 @@ background-color:var(--equal-hover);
 background-color:var(--key-hover);
 }
 
-
 @media (max-width:900px) {
 .title {
 width: 100%;
