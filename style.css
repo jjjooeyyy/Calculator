@@ -113,6 +113,8 @@ main {
  h1 {
    display: flex;
    margin-left: -30%;
+   text-transform: uppercase;
+   font-size: 30px;
 }
 
 p {
