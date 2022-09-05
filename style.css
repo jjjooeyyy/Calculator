@@ -72,14 +72,17 @@
     margin: 0;
 }
 
-.attribution {
-    margin-top: 3rem;
+.attribution{
+    margin-top: 5rem;
     text-align: center;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 body {
     width: 100vw;
-    height: max-content;
+    height: 100vh;
     background-color: var(--mainbackground); /*can be change between themes*/
 }
 
@@ -87,7 +90,6 @@ main {
     height: 100vh;
     padding-top: 60px;
     display: flex;
-
     padding-left: 50px;
     padding-right: 50px;
     flex-direction: column;
