@@ -42,8 +42,8 @@ function selectOperator(operator) {
  // Calculation Operations
  function calculation() {
   let result = "";
-  let previous = parseFloat(previousValue.innerText);
-  let current = parseFloat(currentValue.innerText);
+  let previous = Number(parseFloat(previousValue.innerText).toLocaleString());
+  let current = Number(parseFloat(currentValue.innerText).toLocaleString());
   if(isNaN(previous) || isNaN(current)) {typedValue=""};
 
   switch(operation) {
@@ -63,8 +63,9 @@ function selectOperator(operator) {
     default:
       return;
   }
-  currentValue.innerText = (Number(result)).toLocaleString();
+  currentValue.innerText = (Number(result)).toLocaleString('en');
   operation = undefined;
+  typedValue = 0; // will start a new calculation if no operator is clicked before inputting a number
   previousValue.innerText = "";
   }
  
@@ -91,7 +92,7 @@ number.forEach((num) => {
         return;
       } 
       typedValue += e.target.innerText;
-      currentValue.innerText = Number(typedValue).toLocaleString();
+      currentValue.innerText = Number(typedValue).toLocaleString('en');
       delBtn.disabled = false;
       // console.log();
     });
