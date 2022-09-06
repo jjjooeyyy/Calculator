@@ -1,3 +1,4 @@
+"use strict";
 
 /******* Change Theme *******/
 document.body.addEventListener("change", function(e) {
@@ -30,5 +31,7 @@ document.body.addEventListener("click",(e) => {
   } /** change its text content, textcontent return HTML and CSS text */
  //console.log(e.target.id);
 });
+
+
  
  
