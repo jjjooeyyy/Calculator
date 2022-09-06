@@ -42,16 +42,20 @@ function selectOperator(operator) {
  // Calculation Operations
  function calculation() {
   let result = "";
-  let previous = Number(parseFloat(previousValue.innerText).toLocaleString());
-  let current = Number(parseFloat(currentValue.innerText).toLocaleString());
+  let previous = parseFloat(previousValue.innerText);
+  let current = parseInt(currentValue.innerText);
   if(isNaN(previous) || isNaN(current)) {typedValue=""};
 
   switch(operation) {
     case "+":
-      result = previous + current;
+      console.log(previous);
+      console.log(current);
+     result = previous + current;
+      console.log(result);
       break;
     case "-":
       result = previous - current;
+      console.log(result);
       break;
     case "x":
       result = previous * current;
@@ -59,17 +63,17 @@ function selectOperator(operator) {
       break;
     case "÷":
       result = previous / current;
+      console.log(result);
       break;
     default:
       return;
   }
-  currentValue.innerText = (Number(result)).toLocaleString('en');
+  currentValue.innerText = parseFloat(result).toLocaleString();
   operation = undefined;
   typedValue = 0; // will start a new calculation if no operator is clicked before inputting a number
   previousValue.innerText = "";
   }
  
-
 // Associated clicked operator buttons 
  operators.forEach(btn => {
   btn.addEventListener("click",() => {
@@ -92,7 +96,7 @@ number.forEach((num) => {
         return;
       } 
       typedValue += e.target.innerText;
-      currentValue.innerText = Number(typedValue).toLocaleString('en');
+      currentValue.innerText = typedValue;
       delBtn.disabled = false;
       // console.log();
     });
@@ -121,6 +125,4 @@ result.addEventListener("click",() => {
   previousValue.innerText = "";
   delBtn.disabled = true; // User can't press del to del the number for the result
 })
-
-
 
