@@ -12,6 +12,13 @@ Users should be able to:
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
+### Special Features
+
+- You can change the themes of the calculator 
+- You cannot del the number after pressed "=", You can only reset the display or do another caluculation with the answer.
+- If you click operators without a number, you will return NaN 
+
+
 ### Screenshot
 
 ![](/images/Screenshot%202022-09-06%20at%2001.03.32.png)
