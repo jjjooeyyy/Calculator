@@ -92,6 +92,7 @@ number.forEach((num) => {
       } 
       typedValue += e.target.innerText;
       currentValue.innerText = Number(typedValue).toLocaleString();
+      delBtn.disabled = false;
       // console.log();
     });
   });
