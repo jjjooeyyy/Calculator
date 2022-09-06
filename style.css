@@ -81,13 +81,27 @@
     font-size: 12px;
 }
 
+.container {
+    width: 100%;
+    background-color: var(--mainbackground); /*can be change between themes*/
+
+}
+
 body {
     width: 100vw;
+    min-height: 100vh;
     background-color: var(--mainbackground); /*can be change between themes*/
+    transition-duration: 300ms;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 main {
     height: 100vh;
+    width: 375px;
+    width: 100%;
     padding-top: 60px;
     display: flex;
     padding-left: 50px;
@@ -117,20 +131,19 @@ main {
    font-size: 30px;
 }
 
-p {
-position: relative;
-left: 120px;
-font-size: 18px;
-font-family: "Spartan", sans-serif;
-font-weight: 700;
-}
-
-.right {
+.right p {
     font-size: 18px;
-    position: relative;
-    left: 60px;
     font-family: "Spartan", sans-serif;
     font-weight: 700;
+    }
+
+.right {
+ display: flex;
+    flex-direction:row;
+   justify-content: flex-end;
+    font-size: 18px;
+    font-family: "Spartan", sans-serif;
+    font-weight: 700; 
 }
 
 .title .toggle {
@@ -273,39 +286,63 @@ background-color:var(--equal-hover);
 background-color:var(--key-hover);
 }
 
-@media (max-width:900px) {
-.title {
-width: 100%;
-justify-content: center;
-margin-left: 6%;
+@media screen and (max-width:768px) {
 
+.container {
+    width: 100%;
+    background-color: var(--mainbackground);
+}
+
+body {
+width: 100%;
+margin: 0 auto;
+}
+
+
+main {
+width: 375px;
+display: flex;
+margin: 0 auto;
+padding: 2.8rem 2.4rem;
+}
+
+.title {
+width: 375px;
+display: flex;
 }
 
 h1 {
-    font-size:30px;
-}
-
-p {
-    font-size: 15px;
-    margin-right: -8%;
+    display: none;
 }
 
 .right {
-  margin-left: 20%;
-}
-
-.result {
+display: flex;
+justify-content: space-evenly;
 width: 100%;
 }
 
+p {
+text-align: center;
+font-size: 15px;
+}
+
+
+.result {
+width: 95%;
+}
+
 .buttons-container {
-    width: 100%;
+    width: 95%;
     margin: 10px;
 }
 
 .keycaps {
-    grid-template-rows:repeat(5,60px);
-    grid-template-columns: repeat(4,60px);
+    grid-template-rows:repeat(5,50px);
+    grid-template-columns: repeat(4,50px);
+}
+
+.keycaps button {
+    font-size: 28px;
 }
 
 .attribution {
