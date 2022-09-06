@@ -68,11 +68,15 @@ function selectOperator(operator) {
     default:
       return;
   }
+  if(toString(result).length>10) {
+    currentValue.innerText = Math.round(result);
+  } else{
   currentValue.innerText = parseFloat(result).toLocaleString();
+  }
   operation = undefined;
   typedValue = ""; // will start a new calculation if no operator is clicked before inputting a number
   previousValue.innerText = "";
-  }
+}
  
 // Associated clicked operator buttons 
  operators.forEach(btn => {
@@ -90,7 +94,7 @@ number.forEach((num) => {
         haveDot = true;
       } /*else if (e.target.innerText === "." && haveDot) {
         return;
-      } */ else if (currentValue.innerText.length === 20) {
+      } */ else if (currentValue.innerText.length === 10) {
         return;
       } else if (currentValue.innerText === undefined) {
         return;
