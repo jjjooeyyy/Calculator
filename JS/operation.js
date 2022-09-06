@@ -89,9 +89,9 @@ number.forEach((num) => {
         return;
       } else if (currentValue.innerText === undefined) {
         return;
-      }
+      } 
       typedValue += e.target.innerText;
-      currentValue.innerText = typedValue;
+      currentValue.innerText = Number(typedValue).toLocaleString();
       // console.log();
     });
   });
