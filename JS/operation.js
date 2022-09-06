@@ -70,7 +70,7 @@ function selectOperator(operator) {
   }
   currentValue.innerText = parseFloat(result).toLocaleString();
   operation = undefined;
-  typedValue = 0; // will start a new calculation if no operator is clicked before inputting a number
+  typedValue = ""; // will start a new calculation if no operator is clicked before inputting a number
   previousValue.innerText = "";
   }
  
