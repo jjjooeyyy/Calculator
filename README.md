@@ -14,12 +14,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](/images/Screenshot%202022-09-06%20at%2001.03.32.png)
 
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site URL](https://calculator-withjs.netlify.app/)
 
 
 ### Built with
